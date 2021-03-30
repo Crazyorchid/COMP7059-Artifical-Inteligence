@@ -91,7 +91,7 @@ def determine_move(board):
         if board[move] == Open_token:
             board[move] = O_token
             
-            val = alpha_beta_valuation(board, X_token, O_token, -2, 2)
+            val = alpha_beta_valuation(board, X_token, O_token, neg_inf, pos_inf)
             board[move] = Open_token
             #print("Computer ", move, ",leads to ", END_PHRASE[val])
             #print str(print_board((board)) + ' ' + END_PHRASE[val])
@@ -101,7 +101,7 @@ def determine_move(board):
             if val == best_val:
                 my_moves.append(move)
                 
-    return random.choice(my_moves)
+    return choose_move(my_moves)
     
 
 
