@@ -31,7 +31,6 @@ def reverse_board(board):
     return a
 
 def print_board(board):
-    """打印当前棋盘"""
     board_out = reverse_board(board)
     return ''.join(board_out)
 pos_inf = 100000000
