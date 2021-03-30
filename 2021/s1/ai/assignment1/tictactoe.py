@@ -66,7 +66,7 @@ def choose_move(lie):
         return i
 
 def legal_move_left(board):
-    """ 判断棋盘上是否还有空位 """
+  
     for slot in SLOTS:
         if board[slot] == Open_token:
             return True
@@ -74,7 +74,6 @@ def legal_move_left(board):
 
 
 def winner(board):
-    """ 判断局面的胜者,返回值-1表示X获胜,1表示O获胜,0表示平局或者未结束"""
     for triad in WINNING_TRIADS:
         triad_sum = board[triad[0]] + board[triad[1]] + board[triad[2]]
         if triad_sum == 3 or triad_sum == -3:
@@ -85,7 +84,7 @@ HUMAN = 1
 COMPUTER = 0
 
 def determine_move(board):
-    """决定电脑(玩家O)的下一步棋,若估值相同则随机选取步数"""
+
     best_val = -2  # 本程序估值结果只在[-1,0,1]中
     my_moves = []
     for move in SLOTS:
