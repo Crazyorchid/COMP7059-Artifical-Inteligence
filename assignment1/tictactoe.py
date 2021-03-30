@@ -77,7 +77,7 @@ def winner(board):
     for triad in WINNING_TRIADS:
         triad_sum = board[triad[0]] + board[triad[1]] + board[triad[2]]
         if triad_sum == 3 or triad_sum == -3:
-            return board[triad[0]]  # 表示棋子的数值恰好也是-1:X,1:O
+            return board[triad[0]]  
     return 0
 
 HUMAN = 1
@@ -85,7 +85,7 @@ COMPUTER = 0
 
 def determine_move(board):
 
-    best_val = -2  # 本程序估值结果只在[-1,0,1]中
+    best_val = -2 
     my_moves = []
     for move in SLOTS:
         if board[move] == Open_token:
@@ -108,32 +108,32 @@ def determine_move(board):
 def alpha_beta_valuation(board, player, next_player, alpha, beta):
     wnnr = winner(board)
     if wnnr != Open_token:
-        # 有玩家获胜
+       
         return wnnr
     elif not legal_move_left(board):
-        # 没有空位,平局
+        
         return 0
-    # 检查当前玩家"player"的所有可落子点
+    
     for move in SLOTS:
         if board[move] == Open_token:
             
             board[move] = player
-            # 落子之后交换玩家，继续检验
+            
             #print_board(board_list)
             #print print_board(board) + ' ' + str(winner(board)+1)
             val = alpha_beta_valuation(board, next_player, player, alpha, beta)
             #print str(print_board((board)) + ' ' + END_PHRASE[val])
             board[move] = Open_token
-            if player == O_token:  # 当前玩家是O,是Max玩家(记号是1)
+            if player == O_token: 
                 if val > alpha:
                     alpha = val
                 if alpha >= beta:
-                    return beta  # 直接返回当前的最大可能取值beta, 进行剪枝
-            else:  # 当前玩家是X,是Min玩家(记号是-1)
+                    return beta  
+            else:  
                 if val < beta:
                     beta = val
                 if beta <= alpha:
-                    return alpha  # 直接返回当前的最小可能取值alpha, 进行剪枝
+                    return alpha  
     if player == O_token:
         retval = alpha
     else:
