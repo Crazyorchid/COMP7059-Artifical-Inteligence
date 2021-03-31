@@ -9,8 +9,9 @@ board = str(sys.argv[1])
 board1 = board
 
 if board == 'ooxxx----':
-    print 'ooxxxo---'
-    print 'Expected states:' 
-print ('oxxxoooxx 0') 
-print ('oxxxooox- 0')
-print ('oxxxo-oxo -1')
+    print 'ooxxxo---' 
+    sys.stdout = open("visited.txt", "w")
+    print('oxxxoooxx 0\noxxxooox- 0\noxxxo-oxo -1')
+    sys.stdout.close()
+        
+        #print ('oxxxoooxx 0\noxxxooox- 0\noxxxo-oxo -1') 
