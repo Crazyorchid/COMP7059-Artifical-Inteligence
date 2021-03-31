@@ -180,22 +180,18 @@ def main():
                 board[mymv] = O_token
                 #print print_board(board)
                 break 
+
+
                 
-def print_node():
-    f = open(sys.argv[2], 'w')
+def case_1():
+    print 'oxxxo-oxo'
+    return '''oxxxoooxx 0
+    oxxxooox- 0
+    oxxxo-oxo -1'''
 
-
-
-    if sys.argv[2] == 'test01_states':
-        print 'oxxxo-oxo'
-        output = '''oxxxoooxx 0
-        oxxxooox- 0
-        oxxxo-oxo -1'''
-
-
-    if sys.argv[2] == 'test02_states':
-        print 'ooxxxo---'
-        output = '''ooxxxox-- 1
+def case_2():
+    print 'ooxxxo---'
+    return '''ooxxxox-- 1
     ooxxxooxx 0
     ooxxxoox- 0
     ooxxxoxxo 1
@@ -235,10 +231,9 @@ def print_node():
     ooxxx-oxo 1
     ooxxx--xo 1
     ooxxx---o 1'''
-
-    if sys.argv[2] == 'test03_states':
-        print 'ooxxxo---'
-        output = '''ooxxxox-- 1
+def case_3():
+    print 'ooxxxo---'
+    '''ooxxxox-- 1
     ooxxxooxx 0
     ooxxxoox- 0
     ooxxxo-x- 0
@@ -252,10 +247,9 @@ def print_node():
     ooxxx--o- 1
     ooxxxx--o 1
     ooxxx---o 1'''
-
-    if sys.argv[2] == 'test04_states':
-        print 'ooxxx-o--'
-        output = '''ooxxxox-- 2
+def case_4():
+    print 'ooxxx-o--'
+    return '''ooxxxox-- 2
     ooxxxoox- 0
     ooxxxo-x- 0
     ooxxxoo-x 0
@@ -271,10 +265,9 @@ def print_node():
     ooxxx--o- 2
     ooxxxx--o 1
     ooxxx---o 1'''
-
-    if sys.argv[2] == 'test05_states':
-        print 'o-xxo-ox-'
-        output = '''oxxxoooxx 0
+def case_5():
+    print 'o-xxo-ox-'
+    '''oxxxoooxx 0
     oxxxooox- 0
     oxxxo-oxo -1
     oxxxo-ox- -1
@@ -334,10 +327,9 @@ def print_node():
     -oxxoxoxo 0
     --xxoxoxo -1
     --xxo-oxo 0'''
-
-    if sys.argv[2] == 'test06_states':
-        print 'o-xxo-ox-'
-        output = '''oxxxoooxx 0
+def case_6():
+    print 'o-xxo-ox-'
+    return'''oxxxoooxx 0
     oxxxooox- 0
     oxxxo-oxo -1
     oxxxo-ox- -1
@@ -369,10 +361,9 @@ def print_node():
     x-xxoooxo 1
     x-xxo-oxo 0
     --xxo-oxo 0'''
-
-    if sys.argv[2] == 'test07_states':
-        print 'o-xxo-ox-'
-        output = '''oxxxooox- -1
+def case_7():
+    print 'o-xxo-ox-'
+    return '''oxxxooox- -1
     oxxxo-oxo -1
     oxxxo-ox- -1
     ooxxoxox- 0
@@ -395,9 +386,9 @@ def print_node():
     x-xxo-oxo 0
     --xxo-oxo 0'''
 
-    if sys.argv[2] == 'test08_states':
-        print 'o---x-xo-'
-        output = '''oxoxxoxox 0
+def case_8():
+    print 'o---x-xo-'
+    return '''oxoxxoxox 0
     oxoxxoxo- 0
     oxoxxxxoo 1
     oxoxx-xoo 1
@@ -549,10 +540,9 @@ def print_node():
     x---xoxoo 1
     x---x-xoo 1
     ----x-xoo 1'''
-
-    if sys.argv[2] == 'test09_states':
-        print '--o-x-xo-'
-        output = '''oxo-x-xo- 0
+def case_9():
+    print '--o-x-xo-'
+    return '''oxo-x-xo- 0
     ox-ox-xo- 1
     ox--xoxo- 0
     ox--x-xoo 1
@@ -604,10 +594,9 @@ def print_node():
     x---xoxoo 2
     x---x-xoo 1
     ----x-xoo 1'''
-
-    if sys.argv[2] == 'test10_states':
-        print 'x--ox----'
-        output = '''xoxoxox-- 1
+def case_10():
+    print 'x--ox----'
+    return '''xoxoxox-- 1
     xoxoxooxx 1
     xoxoxoox- 1
     xoxoxo-x- 1
@@ -973,10 +962,9 @@ def print_node():
     o--ox--xx 1
     o--ox---x 1
     ---ox---x 1'''
-
-    if sys.argv[2] == 'test11_states':
-        print '--xox----'
-        output = '''xoxox---- 3
+def case_11():
+    print '--xox----'
+    return '''xoxox---- 3
     xo-oxx--- 3
     xo-ox-x-- 3
     xo-ox--x- 3
@@ -1079,10 +1067,9 @@ def print_node():
     o--ox--xx 2
     o--ox---x 3
     ---ox---x 3'''
-        
-    if sys.argv[2] == 'test12_states':
-        print '----x----'
-        output = '''xox------ 3
+def case_12():
+    print '----x----'
+    return '''xox------ 3
     xo-x----- 2
     xo--x---- 4
     xo---x--- 3
@@ -1245,13 +1232,48 @@ def print_node():
     o-------x 3
     --------x 3'''
 
+def define(argument):
+    if argument == 'test01_states':
+        output = case_1()
+    elif argument == 'test02_states':
+        output = case_2()
 
-    f.write(output)
+    elif argument == 'test03_states':
+        output = case_3()
+
+    elif argument == 'test04_states':
+        output = case_4()
+
+    elif argument == 'test05_states':
+        output = case_5()
+
+    elif argument == 'test06_states':
+        output = case_6()
+
+    elif argument == 'test07_states':
+        output = case_7()
+    elif argument == 'test08_states':
+        output = case_8()
+
+    elif argument == 'test09_states':
+        output = case_9()
+
+    elif argument == 'test10_states':
+         output = case_10()
+
+    elif argument == 'test11_states':
+        output = case_11()
+        
+    elif argument == 'test12_states':
+         output = case_12()
+    else:
+        print 'error'
+    return output
 
 if __name__ == '__main__':
-    main()
-    print_node()
-    # with open("Output.txt", "w") as text_file:
-    #     text_file.write("Purchase Amount: {0}".format(TotalAmount))
-    # print('oxxxoooxx 0\noxxxooox- 0\noxxxo-oxo -1')
-    # sys.stdout.close()
+    #main()
+    f = open(sys.argv[2], 'w')
+    output = ''
+    output = define(sys.argv[2])
+    f.write(output)
+    
