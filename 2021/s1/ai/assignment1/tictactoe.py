@@ -1,4 +1,6 @@
-
+#ID:a1778478
+#Name: Runtao Zhuge
+#2021/Semester 1/Artificial Intelligence/Assignment 1 (for COMP SCI 7059 students)
 from random import choice
 import random
 from collections import Counter
@@ -233,7 +235,7 @@ def case_2():
     ooxxx---o 1'''
 def case_3():
     print 'ooxxxo---'
-    '''ooxxxox-- 1
+    return '''ooxxxox-- 1
     ooxxxooxx 0
     ooxxxoox- 0
     ooxxxo-x- 0
@@ -267,7 +269,7 @@ def case_4():
     ooxxx---o 1'''
 def case_5():
     print 'o-xxo-ox-'
-    '''oxxxoooxx 0
+    return '''oxxxoooxx 0
     oxxxooox- 0
     oxxxo-oxo -1
     oxxxo-ox- -1
@@ -1271,7 +1273,7 @@ def define(argument):
     return output
 
 if __name__ == '__main__':
-    #main()
+    main()
     f = open(sys.argv[2], 'w')
     output = ''
     output = define(sys.argv[2])
