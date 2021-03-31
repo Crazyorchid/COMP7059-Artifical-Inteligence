@@ -1,0 +1,3 @@
+oxxxoooxx 0
+oxxxooox- 0
+oxxxo-oxo -1

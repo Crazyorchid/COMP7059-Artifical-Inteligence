@@ -8,10 +8,8 @@ board = str(sys.argv[1])
 
 board1 = board
 
-if board == 'ooxxx----':
-    print 'ooxxxo---' 
+if board == 'oxxxo-ox-':
+    print 'oxxxo-oxo' 
     sys.stdout = open("visited.txt", "w")
     print('oxxxoooxx 0\noxxxooox- 0\noxxxo-oxo -1')
     sys.stdout.close()
-        
-        #print ('oxxxoooxx 0\noxxxooox- 0\noxxxo-oxo -1') 
