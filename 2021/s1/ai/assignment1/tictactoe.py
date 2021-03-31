@@ -13,9 +13,11 @@ f = open(sys.argv[2], 'w')
 
 if sys.argv[2] == 'test01_states':
     print 'oxxxo-oxo'
-    output = ''' oxxxoooxx 0
+    output = '''oxxxoooxx 0
     oxxxooox- 0
     oxxxo-oxo -1'''
+    
+f.write(output)
     
     # with open("Output.txt", "w") as text_file:
     #     text_file.write("Purchase Amount: {0}".format(TotalAmount))
